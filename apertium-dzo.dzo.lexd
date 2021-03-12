@@ -88,7 +88,7 @@ V-Stems(1) [ <v>: ] V-Stems(2): Tenses?
 
 PATTERN Adjectives
 
-A-Stems [ <adj>: ] Adj-Cases?
+Adj-Stems [ <adj>: ] Adj-Cases?
 
 PATTERN Pronouns
 
@@ -113,6 +113,11 @@ LEXICON Adj-Cases
 
 <comp>:>བ་
 <sup>:>ཤོས་
+
+LEXICON Neg
+
+<neg>:>མ་
+<neg>:>མི་
 
 ###############################################################################
 ###                          L E X I C O N                                  ###
@@ -150,11 +155,11 @@ LEXICON V-Stems(2)
 
 LEXICON Vaux-Stems
 
-
+གེ་:གེ་
 
 LEXICON Adj-Stems
 
-
+འཇའ་:འཇའ་
 
 LEXICON Prns
 
