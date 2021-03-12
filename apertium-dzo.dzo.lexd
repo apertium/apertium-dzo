@@ -2,10 +2,20 @@
 
 # Part of speech categories
 # <n>      # Noun
-# <v>      # Verb
-# <adj>    # Adjective
+# <prn>    # Pronoun
+# <v>      # Standard verb
+# <vaux>   # Auxiliary verb
+# <vbser>  # 'To-be' verb
+# <vbmod>  # Modal verb
+# <adj>    # Descriptive adjective
+# <qtadj>  # Quantitative adjective
+# <adv>    # Adverb
+# <det>    # Determiner
+# <num>    # Numeral
 
 # <sent>   # Sentence-ending punctuation
+# <sylb>   # Syllable-separating punctuation
+# <bgn>    # Beginning-marking punctuation
 # <guio>   # Hyphen
 # <cm>     # Comma
 # <apos>   # Apostrophe
@@ -19,6 +29,41 @@
 # <pl>  # Plural
 # <sg>  # Singular
 
+# Noun Class
+# <cl1> # Common
+# <cl2> # Gendered noun
+# <cl3> # Honorific noun
+
+# Gender
+# <m> # Male
+# <f> # Female
+
+# Tense & Mode
+# <pres> # Present
+# <past> # Past
+# <fut> # Future
+# <imp> # Imperative
+# <adh> # Adhortative
+# <adhn> # Negative Adhortative
+# <opt> # Optative
+# <optn> # Negative Optative
+
+# Adjective morphology
+# <comp> # Comparative
+# <sup> # Superlative
+
+# Noun morphology
+# <gen> # Genitive
+# <loc> # Locative
+# <abl> # Ablative
+# <dat> # Dative
+
+# Verb-to-Noun
+# <sbo> # Subordinate
+
+# General
+# <neg> # Negative
+
 # Other symbols
 # >      # Morpheme boundary
 
@@ -27,24 +72,101 @@
 ###############################################################################
 
 PATTERNS
-NounRoot RegNounInfl
-Punctuation
+Nouns
+Verbs
+Adjectives
+Pronouns
 
+PATTERN Nouns
 
-LEXICON RegNounInfl
+N-Stems [ <n>: ] [<adj><qnt>:>{Q}{N}{v}{d}{j}་]? Cases?
 
-<n><sg>:
-<n><pl>:>s
+PATTERN Verbs
+Vaux-Stems [ <vaux>: ] Tenses?
+V-Stems(1) [ <v>: ] V-Stems(2): Tenses?
+:Neg V-Stems(1) [ <v>: ] V-Stems(2): Tenses? Neg:
 
+PATTERN Adjectives
+
+A-Stems [ <adj>: ] Adj-Cases?
+
+PATTERN Pronouns
+
+Prns Cases?
+
+LEXICON Cases
+
+<gen>:>{G}ི{e}་
+<loc>:>{L}{O}་
+<abl>:>ལས་
+<dat>:>ལུ་
+
+LEXICON Tenses
+
+<past>:>{P}{A}{s}་
+<pres>:>ད{R}{n}་
+<fut>:>{F}{U}{t}་
+<imp>:>{I}{m}{p}་
+<vadj>:>མི་
+
+LEXICON Adj-Cases
+
+<comp>:>བ་
+<sup>:>ཤོས་
 
 ###############################################################################
 ###                          L E X I C O N                                  ###
 ###############################################################################
 
-LEXICON NounRoot
+LEXICON N-Stems
 
-house:house   # A noun
+ཕམ་:ཕམ་
+བྱི་ལི་:བྱི་ལི་
+ཁྱིམ་:ཁྱིམ་
+ཨམ་ཚུ་:ཨམ་ཚུ་
+མདའ་:མདའ་
+ཁྲོམ་:ཁྲོམ་
+ཡིག་ཚང་:ཡིག་ཚང་
+གཡུས་:གཡུས་
+རྒྱ་མཚོ་:རྒྱ་མཚོ་
+ཁ་རྩ་:ཁ་རྩ་
+ཧིང་:ཧིང་
+ཆ་རོགས་:ཆ་རོགས་
+ཐིམ་ཕུག་:ཐིམ་ཕུག་
 
+LEXICON V-Stems(2)
+
+བསགས་:བསགས་  <tv>
+སྦྱངས་:སྦྱངས་  <tv>
+འཁྱུ་:འཁྱུ་  <tv>
+འབད་:འབད་  <tv>
+རྐོ་:རྐོ་  <tv>
+འཁྱུ་:འཁྱུ་  <tv>
+ཟ་:ཟ་  <tv>
+འབད་:འབད་  <tv>
+བལྟ་:བལྟ་  <iv>
+འཁྱུ་:འཁྱུ་  <tv>
+གཅད་:གཅད་  <tv>
+
+LEXICON Vaux-Stems
+
+
+
+LEXICON Adj-Stems
+
+
+
+LEXICON Prns
+
+ང་<prn><p1><sg>:ང་
+ང་བཅས་<prn><p1><pl>:ང་བཅས་
+ཁྱོད་<prn><p2><sg>:ཁྱོད་
+ཁྱོད་<prn><p2><pl>:ཁྱོད་
+ཁོ་<prn><p3><sg><m>:ཁོ་
+མོ་<prn><p3><sg><f>:མོ་
+ཁོང་<prn><p3><pl>:ཁོང་
+ནཱ་<prn><ph><sg>:ནཱ་
+ནཱ་བུ་<prn><ph><pl>:ནཱ་བུ་
 
 LEXICON Punctuation
 
@@ -57,7 +179,7 @@ LEXICON Punctuation
 -<guio>:-
 —<guio>:—
 ,<cm>:,
-?<sent>:? 
+?<sent>:?
 '<apos>:'
 "<quot>:"
 «<lquot>:«
@@ -81,4 +203,3 @@ LEXICON Punctuation
 # https://kitwiki.csc.fi/twiki/bin/view/KitWiki/HfstHome
 # https://github.com/hfst/
 # http://wiki.apertium.org/wiki/Hfst
-

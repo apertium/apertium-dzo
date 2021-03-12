@@ -3,15 +3,49 @@ Alphabet
  a b ç d e ä f g h i j ž k l m n ň o ö p r s ş t u ü w y ý z
  %{A%}:a %>:0  ;
 
+ ཀ ཁ ག ང ཅ ཆ ཇ ཉ ཏ ཐ ད ན པ ཕ བ མ ཙ ཚ ཛ ཝ ཞ ཟ འ ཡ ར ལ ཤ ས ཧ ཨ  ི ུ  ེ  ོ ཊ ཋ ཌ ཎ
+ ྐ ྑ ྒ ྔ ྕ ྖ ྗ ྙ ྟ ྠ ྡ ྣ ྤ ྥ ྦ ྨ ྩ ྪ ྫ ྭ ྯ ཱ ྱ ྲ ླ ྴ ྶ ྷ ྸ  ྀ ྄  ཻ  ཽ ྚ ྛ ྜ ྞ
+ ༉ ༡ ༢ ༣ ༤ ༥ ༦ ༧ ༨ ༩ ༠ ་ ། ?
+
+%{Q%}:ཚ %{Q%}:ཆ
+%{N%}:ུ %{N%}:་
+%{v%}:0 %{v%}:ཁ
+%{d%}:0 %{d%}:ྱ
+%{j%}:0 %{j%}:བ
+
+%{G%}:ག %{G%}:ཀ %{G%}:འ %{G%}:ཡ
+%{e%}:0 %{e%}:ྱ
+
+%{L%}:ན %{L%}:ཁ
+%{O%}:ང %{O%}:ར
+
+%{P%}:ཅ %{P%}:ཡ %{P%}:ན
+%{A%}:ི %{A%}:ུ
+%{s%}:0 %{s%}:ག
+
+%{R%}:ོ %{R%}:ེ
+%{n%}:0 %{n%}:ས
+
+%{F%}:ན %{F%}:འ
+%{U%}:ི %{U%}:ོ
+%{t%}:0 %{t%}:ང
+
+%{I%}:ཤ %{I%}:ཞ %{I%}:ད
+%{m%}:0 %{m%}:ི
+%{p%}:0 %{p%}:ག
+
+
+
+
+
 Sets
 
 Vowel = A E Ä I O Ö U Ü Y Ý
         a e ä i o ö u ü y ý ;
+Vowel =  ི ུ  ེ  ོ
+         ྀ ྄  ཻ  ཽ
 
 Rules
-
-"Remove suffix vowel with vowel-ending stem"
-i:0 <=> Vow %{VSUF%}:0 _ [ m | n ] ;
 
 ! Resources:
 ! http://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Enter_twol
@@ -19,4 +53,3 @@ i:0 <=> Vow %{VSUF%}:0 _ [ m | n ] ;
 ! https://github.com/hfst/
 ! http://wiki.apertium.org/wiki/Twol
 ! http://wiki.apertium.org/wiki/Hfst
-
