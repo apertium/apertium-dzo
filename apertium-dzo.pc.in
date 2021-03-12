@@ -1,0 +1,8 @@
+prefix=@prefix@
+exec_prefix=${prefix}
+srcdir=@datarootdir@/apertium/apertium-dzo
+
+Name: apertium-dzo
+Description: Finite-state morphological transducer and constraint grammar for Dzongkha
+Version: @VERSION@
+
