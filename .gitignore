@@ -20,3 +20,5 @@
 /.deps
 /config.in
 /config
+/dzo.corpus.basic.txt
+/history.log
