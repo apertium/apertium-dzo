@@ -79,16 +79,19 @@ Pronouns
 
 PATTERN Nouns
 
-N-Stems [ <n>: ] [<adj><qnt>:>{Q}{N}{v}{d}{j}་]? Cases?
+N-Stems [ <n>: ] Cases? Cases?
 
 PATTERN Verbs
+Vbser-Stems(1) [ <vbser>: ] Vbser-Stems(2): Tenses?
 Vaux-Stems [ <vaux>: ] Tenses?
+:Neg Vaux-Stems [ <vaux>: ] Tenses? Neg:
 V-Stems(1) [ <v>: ] V-Stems(2): Tenses?
 :Neg V-Stems(1) [ <v>: ] V-Stems(2): Tenses? Neg:
 
 PATTERN Adjectives
 
 Adj-Stems [ <adj>: ] Adj-Cases?
+:Adj-Cases Adj-Stems [ <adj>: ] Adj-Cases:
 
 PATTERN Pronouns
 
@@ -96,10 +99,11 @@ Prns Cases?
 
 LEXICON Cases
 
-<gen>:>{G}ི{e}་
+<gen>:>{G}{e}{T}་{g}{o}{b}
 <loc>:>{L}{O}་
 <abl>:>ལས་
 <dat>:>ལུ་
+<adj><qnt>:>{Q}{N}{v}{d}{j}་
 
 LEXICON Tenses
 
@@ -128,7 +132,7 @@ LEXICON N-Stems
 ཕམ་:ཕམ་
 བྱི་ལི་:བྱི་ལི་
 ཁྱིམ་:ཁྱིམ་
-ཨམ་ཚུ་:ཨམ་ཚུ་
+ཨམ་ཚུ་:ཨམ་ཚུ{b}
 མདའ་:མདའ་
 ཁྲོམ་:ཁྲོམ་
 ཡིག་ཚང་:ཡིག་ཚང་
@@ -146,24 +150,42 @@ LEXICON V-Stems(2)
 འཁྱུ་:འཁྱུ་  <tv>
 འབད་:འབད་  <tv>
 རྐོ་:རྐོ་  <tv>
-འཁྱུ་:འཁྱུ་  <tv>
 ཟ་:ཟ་  <tv>
-འབད་:འབད་  <tv>
 བལྟ་:བལྟ་  <iv>
-འཁྱུ་:འཁྱུ་  <tv>
 གཅད་:གཅད་  <tv>
+བྲིས་:བྲིས་  <tv>
+སྟོན་:སྟོན་  <tv>
+འབྲི་:འབྲི་  <tv>
+གཏང་:གཏང་  <iv>
+འཐེན་:འཐེན་  <iv>
+བཟོ་:བཟོ་  <tv>
+སྤུང་:སྤུང་  <tv>
+ཟུང་:ཟུང་  <tv>
+མཐོང་:མཐོང་  <tv>
 
 LEXICON Vaux-Stems
 
 གེ་:གེ་
+བཅུག་:བཅུག་
+
+LEXICON Vbser-Stems(2)
+
+ཨིན་:ཨིན་  <>
+ཨིན་:མེན་  <neg>
+ཡོད་:ཡོད་  <>
+ཡོད་:མེད་  <neg>
+འདུག་:འདུག་  <>
+འདུག་:མིན་འདུག་  <neg>
+སྨོ་:སྨོ་  <>
 
 LEXICON Adj-Stems
 
 འཇའ་:འཇའ་
+རྒས་:རྒས་
 
 LEXICON Prns
 
-ང་<prn><p1><sg>:ང་
+ང་<prn><p1><sg>:ང{b}
 ང་བཅས་<prn><p1><pl>:ང་བཅས་
 ཁྱོད་<prn><p2><sg>:ཁྱོད་
 ཁྱོད་<prn><p2><pl>:ཁྱོད་

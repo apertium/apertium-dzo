@@ -1,0 +1,159 @@
+Config:
+  hfst:
+    App: hfst-lookup
+    Gen: ../dzo.autogen.hfst
+    Morph: ../dzo.automorf.hfst
+Tests:
+  '"To be" Verb':
+    འདུག་<vbser><neg>:
+    - མིན་འདུག་
+    ཡོད་<vbser><neg>:
+    - མེད་
+    ཨིན་<vbser><neg>:
+    - མེན་
+  Ablative Suffix:
+    ཁ་རྩ་<n><abl>:
+    - ཁ་རྩ་ལས་
+    ང་<prn><p1><sg><abl>:
+    - ང་ལས་
+    རྒྱ་མཚོ་<n><abl>:
+    - རྒྱ་མཚོ་ལས་
+    ཧིང་<n><abl>:
+    - ཧིང་ལས་
+  Adjective (ཁྱད་ཚིག་): {}
+  Adverb (དབྱེ་ཚིག་): {}
+  Alternations: {}
+  Auxiliary Verb: {}
+  Auxiliary Verb Suffix:
+    གེ་<vaux>:
+    - གེ་
+    བཅུག་<vaux>:
+    - བཅུག་
+    བཅུག་<vaux><neg>:
+    - མ་བཅུག་
+    བཟོ་<v><tv>:
+    - བཟོ་
+    ཟ་<v><tv>:
+    - ཟ་
+    ཟུང་<v><tv>:
+    - ཟུང་
+    འབད་<v><tv><neg>:
+    - མ་འབད་
+    སྤུང་<v><tv>:
+    - སྤུང་
+  Common Noun (མིང་ཙམ་): {}
+  Comparative and Superlative:
+    འཇའ་<adj><sup>:
+    - འཇའ་ཤོས་
+    འཇའ་<adj><comp>:
+    - བ་འཇའ་
+    རྒས་<adj><sup>:
+    - རྒས་ཤོས་
+    རྒས་<adj><comp>:
+    - བ་རྒས་
+  Dative Suffix:
+    ང་<prn><p1><sg><dat>:
+    - ང་ལུ་
+    ཆ་རོགས་<n><dat>:
+    - ཆ་རོགས་ལུ་
+    ཐིམ་ཕུག་<n><dat>:
+    - ཐིམ་ཕུག་ལུ་
+    ཡིག་ཚང་<n><loc><dat>:
+    - ཡིག་ཚང་ནང་ལུ་
+  Descriptive Adjectives (ངོ་བོའི་ཁྱད་ཚིག།): {}
+  Determiner: {}
+  Future Tense Suffixes (མ་འོངས་པ་):
+    གཅད་<v><tv><fut>:
+    - གཅད་འོང་
+    བལྟ་<v><iv><fut>:
+    - བལྟ་ནི་
+    འཁྱུ་<v><tv><fut>:
+    - འཁྱུ་ནི་
+  Gendered Noun (རྟགས་མིང་):
+    གཡག་<n><f>:
+    - འབྱི
+    བ་<n><f>:
+    - གླང
+  Genitive Suffixes:
+    ཁོ་<prn><p3><sg><m><gen>:
+    - ཁོ་གི་
+    ཁོང་<prn><p3><pl><gen>:
+    - ཁོང་གི་
+    ཁྱིམ་<n><gen>:
+    - ཁྱིམ་གྱི་
+    ང་<prn><p1><sg><gen>:
+    - ངའི་གི་
+    ང་བཅས་<prn><p1><pl><gen>:
+    - ང་བཅས་ཀྱི་
+    མདའ་<n><gen>:
+    - མདའ་ཡི་
+    ཨམ་ཚུ་<n><gen>:
+    - ཨམ་ཚུའི་
+  Honorific Noun (ཞེ་སའི་མིང་):
+    མགུ་ཏོ་<n>:
+    - དབུ
+    ལུས་<n>:
+    - སྐུ
+  Imperative Suffixes (སྐུལ་ཚིག་):
+    བྲིས་<v><tv><imp>:
+    - བྲིས་ཤིག་
+    ཟ་<v><tv><imp>:
+    - ཟ་ད་
+    འབད་<v><tv><imp>:
+    - འབད་ད་
+    སྟོན་<v><tv><imp>:
+    - སྟོན་ཞིག་
+  Interjection: {}
+  Locative Suffixes:
+    ཁྱིམ་<n><loc>:
+    - ཁྱིམ་ནང་
+    ཁྲོམ་<n><loc>:
+    - ཁྲོམ་ནང་
+    གཡུས་<n><loc>:
+    - གཡུས་ཁར་
+    ཡིག་ཚང་<n><loc>:
+    - ཡིག་ཚང་ནང་
+  Modal Verb: {}
+  Negative (དགག་སྒྲ་):
+    མཐོང་<v><tv><neg>:
+    - མ་མཐོང་
+    འབད་<v><tv><neg>:
+    - མི་འབད་
+  Noun (མིང་): {}
+  Numeral: {}
+  Parts of Speech: {}
+  Past Tense Suffixes (འདས་པ་):
+    བསགས་<v><tv><past>:
+    - བསགས་ཅི་
+    འཁྱུ་<v><tv><past>:
+    - འཁྱུ་ནུག་
+    འབད་<v><tv><past>:
+    - འབད་ནུག་
+    སྦྱངས་<v><tv><past>:
+    - སྦྱངས་ཡི་
+  Postposition: {}
+  Present Tense Suffixes (ད་ལྟ་བ་):
+    ཟ་<v><tv><pres>:
+    - ཟ་དེས་
+    འཁྱུ་<v><tv><pres>:
+    - འཁྱུ་དོ་
+    འབད་<v><tv><pres>:
+    - འབད་དེས་
+    རྐོ་<v><tv><pres>:
+    - རྐོ་དོ་
+  Pronouns (མིང་ཚབ་): {}
+  Quantitative Adjectives (གྲངས་ཀྱི་ཁྱད་ཚིག།):
+    ཕམ་<n><adj><qnt>:
+    - ཕམ་ཆ་ཁྱབ་
+    བྱི་ལི་<n><adj><qnt>:
+    - བྱི་ལི་ཚུ་
+  Verb (བྱ་ཚིག་): {}
+  Verbal Adjective:
+    གཏང་<v><iv><vadj>:
+    - གཏང་མི་
+    འཁྱུ་<v><tv><vadj>:
+    - འཁྱུ་མི་
+    འཐེན་<v><iv><vadj>:
+    - འཐེན་མི་
+    འབྲི་<v><tv><vadj>:
+    - འབྲི་མི་
