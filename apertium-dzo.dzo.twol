@@ -1,10 +1,10 @@
 Alphabet
  A B Ç D E Ä F G H I J Ž K L M N Ň O Ö P R S Ş T U Ü W Y Ý Z
  a b ç d e ä f g h i j ž k l m n ň o ö p r s ş t u ü w y ý z
- %{A%}:a %>:0  ;
+ %{A%}:a %>:0
  ཀ ཁ ག ང ཅ ཆ ཇ ཉ ཏ ཐ ད ན པ ཕ བ མ ཙ ཚ ཛ ཝ ཞ ཟ འ ཡ ར ལ ཤ ས ཧ ཨ  ི ུ  ེ  ོ ཊ ཋ ཌ ཎ
  ྐ ྑ ྒ ྔ ྕ ྖ ྗ ྙ ྟ ྠ ྡ ྣ ྤ ྥ ྦ ྨ ྩ ྪ ྫ ྭ ྯ ཱ ྱ ྲ ླ ྴ ྶ ྷ ྸ  ྀ ྄  ཻ  ཽ ྚ ྛ ྜ ྞ
- ༉ ༡ ༢ ༣ ༤ ༥ ༦ ༧ ༨ ༩ ༠ ་ ། ?
+ ༉ ༡ ༢ ༣ ༤ ༥ ༦ ༧ ༨ ༩ ༠ ་ །
 %{Q%}:ཚ %{Q%}:ཆ
 %{N%}:ུ %{N%}:་
 %{v%}:0 %{v%}:ཁ
@@ -24,7 +24,7 @@ Alphabet
 %{t%}:0 %{t%}:ང
 %{I%}:ཤ %{I%}:ཞ %{I%}:ད
 %{m%}:0 %{m%}:ི
-%{p%}:0 %{p%}:ག
+%{p%}:0 %{p%}:ག ;
 
 
 
@@ -33,11 +33,14 @@ Alphabet
 Sets
 
 Vowel = A E Ä I O Ö U Ü Y Ý
-        a e ä i o ö u ü y ý ;
-Vowel =  ི ུ  ེ  ོ
-         ྀ ྄  ཻ  ཽ
+        a e ä i o ö u ü y ý
+        ི ུ  ེ  ོ
+        ྀ ྄  ཻ  ཽ ;
 
 Rules
+
+"Remove suffix vowel with vowel-ending stem"
+i:0 <=> Vow %{VSUF%}:0 _ [ m | n ] ;
 
 ! Resources:
 ! http://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Enter_twol
