@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <modes>
-  
-  <program name="python3">
-    <file name="tokenize.py"/>
-    <file name="dzo.automorf.hfst"/>
-  </program>
 
   <mode name="dzo-twol" install="yes">
     <pipeline>
@@ -18,6 +13,10 @@
 
   <mode name="dzo-morph" install="yes">
     <pipeline>
+      <program name="python3">
+        <file name="tokenize.py"/>
+        <file name="dzo.automorf.hfst"/>
+      </program>
       <program name="lt-proc -w">
         <file name="dzo.automorf.bin"/>
       </program>
@@ -42,6 +41,10 @@
 
   <mode name="dzo-tagger" install="yes">
     <pipeline>
+      <program name="python3">
+        <file name="tokenize.py"/>
+        <file name="dzo.automorf.hfst"/>
+      </program>
       <program name="lt-proc -w">
         <file name="dzo.automorf.bin"/>
       </program>
@@ -53,6 +56,10 @@
 
   <mode name="dzo-disam" install="yes">
     <pipeline>
+      <program name="python3">
+        <file name="tokenize.py"/>
+        <file name="dzo.automorf.hfst"/>
+      </program>
       <program name="lt-proc -w">
         <file name="dzo.automorf.bin"/>
       </program>
