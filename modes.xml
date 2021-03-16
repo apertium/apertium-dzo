@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <modes>
+  
+  <program name="python3">
+    <file name="tokenize.py"/>
+    <file name="dzo.automorf.hfst"/>
+  </program>
 
   <mode name="dzo-twol" install="yes">
     <pipeline>
@@ -59,4 +64,3 @@
   </mode>
 
 </modes>
-
