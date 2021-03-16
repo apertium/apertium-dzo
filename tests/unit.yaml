@@ -4,8 +4,6 @@ Config:
     Gen: ../dzo.autogen.hfst
     Morph: ../dzo.automorf.hfst
 Tests:
-  Quantitative Adjectives (གྲངས་ཀྱི་ཁྱད་ཚིག།):
-    ཕམ་<n><adj><qnt>:
-      - ཕམ་ཆ་ཁྱབ་
-    བྱི་ལི་<n><adj><qnt>:
-      - བྱི་ལིཆ་ཆ་་
+  Dative Suffix:
+     ཡིག་ཚང་<n><loc><dat>:
+     - ཡིག་ཚང་ནང་ལུ་

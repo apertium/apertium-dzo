@@ -43,14 +43,14 @@ Tests:
     - སྤུང་
   Common Noun (མིང་ཙམ་): {}
   Comparative and Superlative:
-    འཇའ་<adj><sup>:
-    - འཇའ་ཤོས་
     འཇའ་<adj><comp>:
     - བ་འཇའ་
-    རྒས་<adj><sup>:
-    - རྒས་ཤོས་
+    འཇའ་<adj><sup>:
+    - འཇའ་ཤོས་
     རྒས་<adj><comp>:
     - བ་རྒས་
+    རྒས་<adj><sup>:
+    - རྒས་ཤོས་
   Dative Suffix:
     ང་<prn><p1><sg><dat>:
     - ང་ལུ་
@@ -71,9 +71,9 @@ Tests:
     - འཁྱུ་ནི་
   Gendered Noun (རྟགས་མིང་):
     གཡག་<n><f>:
-    - འབྱི
+    - འབྱི་
     བ་<n><f>:
-    - གླང
+    - གླང་
   Genitive Suffixes:
     ཁོ་<prn><p3><sg><m><gen>:
     - ཁོ་གི་
@@ -91,9 +91,9 @@ Tests:
     - ཨམ་ཚུའི་
   Honorific Noun (ཞེ་སའི་མིང་):
     མགུ་ཏོ་<n>:
-    - དབུ
+    - དབུ་
     ལུས་<n>:
-    - སྐུ
+    - སྐུ་
   Imperative Suffixes (སྐུལ་ཚིག་):
     བྲིས་<v><tv><imp>:
     - བྲིས་ཤིག་
