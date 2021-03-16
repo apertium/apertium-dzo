@@ -16,7 +16,7 @@ $CAT $CORPUS > $TMPCORPUS
 
 echo "Generating hitparade (might take a bit!)"
 
-cat $TMPCORPUS | apertium-destxt | hfst-proc -w $ANALYSER | python3 tokenize.py | apertium-retxt | sed -E $'s/\\$[^^]*/\\$\\\n/g' > /tmp/$LG.parade.txt
+cat $TMPCORPUS | apertium-destxt | python3 tokenize.py dzo.autotok.hfst | hfst-proc -w $ANALYSER | apertium-retxt | sed -E $'s/\\$[^^]*/\\$\\\n/g' > /tmp/$LG.parade.txt
 
 echo "TOP UNKNOWN WORDS:"
 

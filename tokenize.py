@@ -14,14 +14,19 @@
 import hfst
 
 def list_options(spans, start, wlen):
-    if start == wlen:
-        yield []
-    for i in range(start, wlen):
+    def ls_op_recurse(i):
+        nonlocal spans, wlen
         if i in spans:
             for j in spans[i]:
                 for op in list_options(spans, j, wlen):
                     yield [(i,j)] + op
-        yield from list_options(spans, i+1, wlen)
+    got_any = False
+    for i in range(start, wlen):
+        if i in spans:
+            yield from ls_op_recurse(i)
+            got_any = True
+    if not got_any:
+        yield []
 
 def weight_options(spans, wlen):
     for op in list_options(spans, 0, wlen):
@@ -43,17 +48,59 @@ def weight_options(spans, wlen):
             unk_len += (wlen - n)
         yield (op, unk_count, unk_len)
 
-def process_word(word, analyzer, sout):
+def closure(analyzer, states):
+    if not states:
+        return ([], False)
+    ls = []
+    todo = states
+    any_final = False
+    while todo:
+        s = todo.pop()
+        if s in ls:
+            continue
+        ls.append(s)
+        if analyzer.is_final_state(s):
+            any_final = True
+        tr = analyzer.transitions(s)
+        for t in tr:
+            if t.get_input_symbol() == '@_EPSILON_SYMBOL_@':
+                dest = t.get_target_state()
+                if dest not in ls:
+                    ls.append(dest)
+                    todo.append(dest)
+    return (ls, any_final)
+
+def step(analyzer, states, c):
+    ls = []
+    for s in states:
+        for t in analyzer.transitions(s):
+            if t.get_input_symbol() == c:
+                ls.append(t.get_target_state())
+    return closure(analyzer, ls)
+        
+def find_spans(word, analyzer):
     spans = {}
+    init_state, _ = closure(analyzer, [0])
     for i in range(len(word)):
-        ls = []
+        states = init_state[:]
+        ends = []
         for j in range(i+1, len(word)+1):
-            if len(analyzer.lookup(word[i:j])) != 0:
-                ls.append(j)
-        if ls:
-            spans[i] = list(reversed(ls))
+            states, final = step(analyzer, states, word[j-1])
+            if final:
+                ends.append(j)
+            if len(states) == 0:
+                break
+        if ends:
+            spans[i] = list(reversed(ends))
             # put the longest option first
             # so we can approximate LRLM when we randomize
+    return spans
+
+def process_word(word, analyzer, sout):
+    spans = find_spans(word, analyzer)
+    if len(spans) == 0:
+        sout.write(word)
+        return
     mins = []
     min_count = len(word)
     min_len = len(word)
@@ -101,6 +148,6 @@ if __name__ == '__main__':
     prs.add_argument('transducer')
     args = prs.parse_args()
     stream = hfst.HfstInputStream(args.transducer)
-    analyzer = stream.read()
+    analyzer = hfst.HfstBasicTransducer(stream.read())
     import sys
     process_stream(analyzer, sys.stdin, sys.stdout)
