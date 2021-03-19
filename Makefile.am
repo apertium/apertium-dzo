@@ -14,7 +14,8 @@ TARGETS_COMMON =			\
 	$(LANG1).autogen.att.gz		\
 	$(LANG1).autopgen.bin		\
 	$(LANG1).prob                   \
-	$(LANG1).rlx.bin
+	$(LANG1).rlx.bin   \
+	$(LANG1).autotok.hfst
 
 # This include defines goals for install-modes, .deps/.d, autobil.prefixes and .mode files:
 @ap_include@
@@ -57,6 +58,9 @@ $(LANG1).autogen.hfst: .deps/$(LANG1).RL.hfst
 
 $(LANG1).automorf.hfst: .deps/$(LANG1).LR.hfst .deps/$(LANG1).spellrelax.hfst
 	hfst-compose -1 $< -2 .deps/$(LANG1).spellrelax.hfst | hfst-invert | hfst-fst2fst -O -o $@
+
+$(LANG1).autotok.hfst: $(LANG1).automorf.hfst
+	hfst-fst2fst -F $< | hfst-project -p input | hfst-minimize -o $@
 
 $(LANG1).autogen.att.gz: $(LANG1).autogen.hfst
 	hfst-fst2txt $< | gzip -9 -c -n > $@
