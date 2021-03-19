@@ -1,3 +1,4 @@
+#!/bin/bash
 LG=dzo
 count=0
 pass=0
