@@ -5,5 +5,5 @@ Config:
     Morph: ../dzo.automorf.hfst
 Tests:
   Dative Suffix:
-     ཡིག་ཚང་<n><loc><dat>:
-     - ཡིག་ཚང་ནང་ལུ་
+     ང་<prn><p1><sg><gen>:
+     - ངའི་གི་
