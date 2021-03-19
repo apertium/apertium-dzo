@@ -15,6 +15,7 @@ Alphabet
 %{T%}:ི
 %{g%}:0 %{g%}:ག
 %{o%}:0 %{o%}:ི
+%{b%}:0 %{b%}:་
 %{L%}:ན %{L%}:ཁ
 %{O%}:ང %{O%}:ར
 %{P%}:ཅ %{P%}:ཡ %{P%}:ན
@@ -28,7 +29,7 @@ Alphabet
 %{I%}:ཤ %{I%}:ཞ %{I%}:ད
 %{m%}:0 %{m%}:ི
 %{p%}:0 %{p%}:ག
-%{b%}:0 %{b%}:་  ;
+%{r%}:0 %{r%}:་ ;
 
 
 
@@ -44,6 +45,9 @@ Rules
 
 "Remove suffix vowel with vowel-ending stem"
 i:0 <=> Vow %{VSUF%}:0 _ [ m | n ] ;
+
+"Remove syllable boundary when suffix is འི "
+%{r%}:0 <=> _ %>: :འ :ི ;
 
 ! Resources:
 ! http://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Enter_twol

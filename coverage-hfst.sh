@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CORPUS=dzo1.corpus.basic1.txt
+CORPUS=dzo1.corpus.basic2.txt
 ANALYSER=dzo.automorf.hfst
 LG=$(echo $CORPUS | sed 's:.*\/::' | sed -E 's:(.*\..*)\..*\.txt.*:\1:') # get corpus prefix
 
@@ -16,7 +16,7 @@ $CAT $CORPUS > $TMPCORPUS
 
 echo "Generating hitparade (might take a bit!)"
 
-cat $TMPCORPUS | apertium-destxt | hfst-proc -w $ANALYSER | python3 tokenize.py | apertium-retxt | sed -E $'s/\\$[^^]*/\\$\\\n/g' > /tmp/$LG.parade.txt
+cat $TMPCORPUS | apertium-destxt | hfst-proc -w $ANALYSER | python3 tokenize.py $ANALYSER | apertium-retxt | sed -E $'s/\\$[^^]*/\\$\\\n/g' > /tmp/$LG.parade.txt
 
 echo "TOP UNKNOWN WORDS:"
 
