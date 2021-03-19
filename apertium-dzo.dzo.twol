@@ -49,6 +49,8 @@ i:0 <=> Vow %{VSUF%}:0 _ [ m | n ] ;
 "Remove syllable boundary when suffix is འི "
 %{r%}:0 <=> _ %>: :འ :ི ;
 
+!@ ང:ང {r}:0 %>:0 འ:འ ི:ི ;
+
 ! Resources:
 ! http://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Enter_twol
 ! https://kitwiki.csc.fi/twiki/bin/view/KitWiki/HfstHome
