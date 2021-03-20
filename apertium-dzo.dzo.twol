@@ -8,27 +8,42 @@ Alphabet
 %{Q%}:ཚ %{Q%}:ཆ
 %{N%}:ུ %{N%}:་
 %{v%}:0 %{v%}:ཁ
-%{d%}:ྱ %{d%}:0
+%{d%}:0 %{d%}:ྱ
 %{j%}:0 %{j%}:བ
+
 %{G%}:ག %{G%}:ཀ %{G%}:འ %{G%}:ཡ
 %{e%}:0 %{e%}:ྱ
 %{T%}:ི
 %{g%}:0 %{g%}:ག
 %{o%}:0 %{o%}:ི
 %{b%}:0 %{b%}:་
+
 %{L%}:ན %{L%}:ཁ
 %{O%}:ང %{O%}:ར
+
 %{P%}:ཅ %{P%}:ཡ %{P%}:ན
 %{A%}:ི %{A%}:ུ
 %{s%}:0 %{s%}:ག
+
 %{R%}:ོ %{R%}:ེ
 %{n%}:0 %{n%}:ས
+
 %{F%}:ན %{F%}:འ
 %{U%}:ི %{U%}:ོ
 %{t%}:0 %{t%}:ང
+
 %{I%}:ཤ %{I%}:ཞ %{I%}:ད
 %{m%}:0 %{m%}:ི
 %{p%}:0 %{p%}:ག
+
+%{w%}:0 %{w%}:ི
+
+%{neg%}:0
+
+%{loc%}:0
+
+%{pl%}:0
+
 %{r%}:0 %{r%}:་ ;
 
 
@@ -43,13 +58,32 @@ Vowel = A E Ä I O Ö U Ü Y Ý
 
 Rules
 
-"Remove suffix vowel with vowel-ending stem"
-i:0 <=> Vow %{VSUF%}:0 _ [ m | n ] ;
-
 "Remove syllable boundary when suffix is འི "
-%{r%}:0 <=> _ %>: :འ :ི ;
+%{r%}:0 <=> _ %>: :འ :0 :ི ;
 
-!@ ང:ང {r}:0 %>:0 འ:འ ི:ི ;
+"Negative is མི only when verb is past tense"
+%{w%}:0 <=> _ :* %{neg%}: ;
+
+"Special Locative Suffix with some nominals(1)"
+%{L%}:ཁ <=> %{loc%}: :* _ ;
+
+"Special Locative Suffix with some nominals(2)"
+%{O%}:ར <=> %{loc%}: :* _ ;
+
+"Special Plural with some nouns(1)"
+%{Q%}:ཆ <=> %{pl%}: :* _ ;
+
+"Special Plural with some nouns(2)"
+%{N%}:་ <=> %{pl%}: :* _ ;
+
+"Special Plural with some nouns(3)"
+%{v%}:ཁ <=> %{pl%}: :* _ ;
+
+"Special Plural with some nouns(4)"
+%{d%}:ྱ <=> %{pl%}: :* _ ;
+
+"Special Plural with some nouns(5)"
+%{j%}:བ <=> %{pl%}: :* _ ;
 
 ! Resources:
 ! http://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Enter_twol

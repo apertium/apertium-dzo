@@ -90,8 +90,8 @@ V-Stems(1) [ <v>: ] V-Stems(2): Tenses?
 
 PATTERN Adjectives
 
-Adj-Stems [ <adj>: ] Adj-Cases?
-:Adj-Cases Adj-Stems [ <adj>: ] Adj-Cases:
+Adj-Stems [ <adj>: ] Adj-Sup?
+:Adj-Comp Adj-Stems [ <adj>: ] Adj-Comp:
 
 PATTERN Pronouns
 
@@ -99,7 +99,7 @@ Prns Cases?
 
 LEXICON Cases
 
-<gen>:>{G}{e}{T}་{g}{o}{b}
+<gen>:>{G}{e}{T}་
 <loc>:>{L}{O}་
 <abl>:>ལས་
 <dat>:>ལུ་
@@ -108,21 +108,23 @@ LEXICON Cases
 
 LEXICON Tenses
 
-<past>:>{P}{A}{s}་
+<past>:>{neg}{P}{A}{s}་
 <pres>:>ད{R}{n}་
 <fut>:>{F}{U}{t}་
 <imp>:>{I}{m}{p}་
 <vadj>:>མི་
 
-LEXICON Adj-Cases
+LEXICON Adj-Comp
 
 <comp>:>བ་
+
+LEXICON Adj-Sup
+
 <sup>:>ཤོས་
 
 LEXICON Neg
 
-<neg>:>མ་
-<neg>:>མི་
+<neg>:>མ{w}་
 
 ###############################################################################
 ###                          L E X I C O N                                  ###
@@ -130,14 +132,14 @@ LEXICON Neg
 
 LEXICON N-Stems(2)
 
-ཕམ་:ཕམ་  :
+ཕམ་:ཕམ་{pl}  :
 བྱི་ལི་:བྱི་ལི་  :
 ཁྱིམ་:ཁྱིམ་  :
 ཨམ་ཚུ་:ཨམ་ཚུ{r}  :
 མདའ་:མདའ་  :
 ཁྲོམ་:ཁྲོམ་  :
 ཡིག་ཚང་:ཡིག་ཚང་  :
-གཡུས་:གཡུས་  :
+གཡུས་:གཡུས་{loc}  :
 རྒྱ་མཚོ་:རྒྱ་མཚོ་  :
 ཁ་རྩ་:ཁ་རྩ་  :
 ཧིང་:ཧིང་  :
