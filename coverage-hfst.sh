@@ -1,7 +1,8 @@
 #!/bin/bash
 
-CORPUS=dzo1.corpus.basic2.txt
-ANALYSER=dzo.automorf.hfst
+CORPUS=$1
+ANALYSER=$2
+TOKENIZER=$3
 LG=$(echo $CORPUS | sed 's:.*\/::' | sed -E 's:(.*\..*)\..*\.txt.*:\1:') # get corpus prefix
 
 TMPCORPUS=/tmp/$LG.corpus.txt
@@ -10,14 +11,13 @@ if [[ $1 =~ .*bz2 ]]; then
 	CAT="bzcat"
 else
 	CAT="cat"
-fi;
+fi; 
 
 $CAT $CORPUS > $TMPCORPUS
 
 echo "Generating hitparade (might take a bit!)"
 
-cat $TMPCORPUS | apertium-destxt | python3 tokenize.py dzo.autotok.hfst | hfst-proc -w $ANALYSER | apertium-retxt | sed -E $'s/\\$[^^]*/\\$\\\n/g' > /tmp/$LG.parade.txt
-
+cat $TMPCORPUS | apertium-destxt | python3 tokenize.py $TOKENIZER | hfst-proc -w $ANALYSER | apertium-retxt | sed -E $'s/\\$[^^]*/\\$\\\n/g' > /tmp/$LG.parade.txt
 
 echo "TOP UNKNOWN WORDS:"
 
@@ -35,4 +35,3 @@ echo "remaining unknown forms: $UNKNOWN"
 DATE=`date`;
 echo -e $LG $DATE"\t"$KNOWN"/"$TOTAL"\t"$PERCENTAGE >> history.log
 tail -1 history.log
-rm $TMPCORPUS /tmp/$LG.parade.txt
