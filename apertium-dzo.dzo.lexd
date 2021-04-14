@@ -199,6 +199,8 @@ LEXICON Adj-Stems
 འཇའ་:འཇའ་
 རྒས་:རྒས་
 སྦོམ་:སྦོམ་
+རིངམོ་:རིངམོ་
+སེརཔོ་:སེརཔོ་
 
 LEXICON Prns
 
@@ -214,6 +216,8 @@ LEXICON Prns
 
 LEXICON Punctuation
 
+།<sent>:།
+་<sent>:་
 .<sent>:.
 ..<sent>:..
 ...<sent>:...
