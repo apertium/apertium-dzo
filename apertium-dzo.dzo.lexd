@@ -76,6 +76,9 @@ Nouns
 Verbs
 Adjectives
 Pronouns
+Numeral
+Determiner
+Adverb
 
 PATTERN Nouns
 
@@ -96,6 +99,18 @@ Adj-Stems [ <adj>: ] Adj-Sup?
 PATTERN Pronouns
 
 Prns Cases?
+
+PATTERN Numeral
+
+Nums Cases?
+
+PATTERN Determiner
+
+Det Cases?
+
+PATTERN Adverb
+
+Adv Cases?
 
 LEXICON Cases
 
@@ -150,6 +165,7 @@ LEXICON N-Stems(2)
 སྒྲོམ་:སྒྲོམ་  :
 དགེ་སློང་:དགེ་སློང་  :
 སྲིངམོ་:སྲིངམོ་  :
+དུས་ཚོད་:དུས་ཚོད་ :
 ཉིམ་:ཉིམ་  :
 སྲུང་:སྲུང་  :
 ནོར་བུ་:ནོར་བུ་  :
@@ -178,6 +194,7 @@ LEXICON V-Stems(2)
 མཐོང་:མཐོང་  <tv>
 ཤར་:ཤར་ <iv>
 འཐོབ་:འཐོབ་ <iv>
+ལྷོད་:ལྷོད་ <iv>
 
 LEXICON Vaux-Stems
 
@@ -201,6 +218,7 @@ LEXICON Adj-Stems
 སྦོམ་:སྦོམ་
 རིངམོ་:རིངམོ་
 སེརཔོ་:སེརཔོ་
+དག་པ་གཅིག་:དག་པ་གཅིག་
 
 LEXICON Prns
 
@@ -213,6 +231,20 @@ LEXICON Prns
 ཁོང་<prn><p3><pl>:ཁོང་
 ནཱ་<prn><ph><sg>:ནཱ་
 ནཱ་བུ་<prn><ph><pl>:ནཱ་བུ་
+
+
+LEXICON Nums
+
+གཅིག་<num>:གཅིག་
+གཉིས་<num>:གཉིས་
+
+LEXICON Det
+
+དེ་<det>:དེ་
+
+LEXICON Adv
+
+ད་<adv>:ད་
 
 LEXICON Punctuation
 
