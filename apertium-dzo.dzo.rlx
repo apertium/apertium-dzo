@@ -5,11 +5,22 @@ DELIMITERS = "<.>" ;
 LIST Case = (n s) (n p) ; # A set that matches either a Noun Singular or a Noun Plural
 
 SECTION
-# If there is a singular noun to the right, I cannot be a verb or noun.
-REMOVE (n) OR (v) IF (1 (n s)) ;
 
-# If there is a conjunction followed by a certain cohort of the same CASE as me, choose me.
-SELECT $$Case IF (1 (cnjcoo) LINK 1C $$Case) ;
+# If there is a noun after the ambiguous word, select the adverb reading
+SELECT (adv) IF
+             (0 (adv))
+             (0 (imp))
+             (0 (cnjsub))
+             (1 (n) ) ;
+
+# If there is a noun after AND verb before the ambiguous word, select the cnjsub reading
+SELECT (cnjsub) IF
+            (0 (adv))
+            (0 (imp))
+            (0 (cnjsub))
+            (1 (n))
+            (-1 (v)) ;
+
 
 # Resources:
 # http://visl.sdu.dk/cg3.html
@@ -17,4 +28,3 @@ SELECT $$Case IF (1 (cnjcoo) LINK 1C $$Case) ;
 # http://kevindonnelly.org.uk/2010/05/constraint-grammar-tutorial/
 # http://wiki.apertium.org/wiki/Constraint_Grammar
 # http://wiki.apertium.org/wiki/Apertium_and_Constraint_Grammar
-
