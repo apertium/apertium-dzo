@@ -47,6 +47,7 @@
 # <adhn> # Negative Adhortative
 # <opt> # Optative
 # <optn> # Negative Optative
+# <cjnsub> # Conjunctive Subordinator
 
 # Adjective morphology
 # <comp> # Comparative
@@ -120,6 +121,7 @@ LEXICON Cases
 <dat>:>ལུ་
 <loc><dat>:>{L}{O}་ལུ་  # Sorta Hard-Coded
 <adj><qnt>:>{Q}{N}{v}{d}{j}་
+<cjnsub>:>ད་
 
 LEXICON Tenses
 
@@ -166,12 +168,17 @@ LEXICON N-Stems(2)
 དགེ་སློང་:དགེ་སློང་  :
 སྲིངམོ་:སྲིངམོ་  :
 དུས་ཚོད་:དུས་ཚོད་ :
+མཐུ་:མཐུ་  :
 ཉིམ་:ཉིམ་  :
 སྲུང་:སྲུང་  :
 ནོར་བུ་:ནོར་བུ་  :
 བྱི་ཙི་:བྱི་ཙི་  :
 གསེར་:གསེར་  :
+སྨན་:སྨན་  :
+ཕྱག་:ཕྱག་  :
 རྒྱུ་ནོར་:རྒྱུ་ནོར་  :
+ཐགཔ་:ཐགཔ་  :
+ཞབས་ཁྲ་:ཞབས་ཁྲ་  :
 གཡག་:འབྱི་  <f>
 བ་:གླང་  <f>
 
@@ -199,6 +206,9 @@ LEXICON V-Stems(2)
 ལྷོད་:ལྷོད་ <iv>
 བཙོངམ་:བཙོངམ་ <tv>
 ཐོབ་:ཐོབ་ <tv>
+གནང་:གནང་ <tv>
+འཐེན་:འཐེན་  <iv>
+རྐྱབ་:རྐྱབ་ <iv>
 
 LEXICON Vaux-Stems
 
