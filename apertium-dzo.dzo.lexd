@@ -79,6 +79,7 @@ Pronouns
 Numeral
 Determiner
 Adverb
+Conjunction
 
 PATTERN Nouns
 
@@ -104,15 +105,19 @@ Prns Cases?
 
 PATTERN Numeral
 
-Nums Cases?
+Nums [ <num>: ] Cases?
 
 PATTERN Determiner
 
-Det Cases?
+Det [ <det>: ] Cases?
 
 PATTERN Adverb
 
-Adv Cases?
+Adv [ <adv>: ] Cases?
+
+PATTERN Conjunction
+
+Conj [ <cnjsub>: ] Cases?
 
 LEXICON Cases
 
@@ -269,17 +274,20 @@ LEXICON Prns
 
 LEXICON Nums
 
-གཅིག་<num>:གཅིག་
-གཉིས་<num>:གཉིས་
+གཅིག་:གཅིག་
+གཉིས་:གཉིས་
 
 LEXICON Det
 
-དེ་<det>:དེ་
+དེ་:དེ་
 
 LEXICON Adv
 
-ད་<adv>:ད་
+ད་:ད་
 
+LEXICON Conj
+
+ད་:ད་
 
 LEXICON Punctuation
 
