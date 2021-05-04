@@ -6,20 +6,18 @@ LIST Case = (n s) (n p) ; # A set that matches either a Noun Singular or a Noun 
 
 SECTION
 
-# If there is a noun after the ambiguous word, select the adverb reading
+# If there is a noun after AND verb before the ambiguous word, remove the adverb reading
+REMOVE (adv) IF
+             (0 (adv))
+             (0 (cnjsub))
+             (1 (n) )
+             (-1 (v)) ;
+
+# If there is a noun after the ambiguous word, select the adv reading
 SELECT (adv) IF
              (0 (adv))
-             (0 (imp))
              (0 (cnjsub))
              (1 (n) ) ;
-
-# If there is a noun after AND verb before the ambiguous word, select the cnjsub reading
-SELECT (cnjsub) IF
-            (0 (adv))
-            (0 (imp))
-            (0 (cnjsub))
-            (1 (n))
-            (-1 (v)) ;
 
 
 # Resources:
