@@ -1,8 +1,8 @@
 Config:
   hfst:
     App: hfst-lookup
-    Gen: ../dzo.autogen.hfst
-    Morph: ../dzo.automorf.hfst
+    Gen: ../dzon.autogen.hfst
+    Morph: ../dzon.automorf.hfst
 Tests:
   '"To be" Verb':
     འདུག་<vbser><neg>:
@@ -25,6 +25,8 @@ Tests:
   Alternations: {}
   Auxiliary Verb: {}
   Auxiliary Verb Suffix {{tag|Under-Rework}}:
+    གཅད་<v><tv><fut>:
+    - གཅད་འོང་
     གེ་<vaux><adh>:
     - གེ་
     གེ་<vaux><neg><adh>:
@@ -133,8 +135,8 @@ Tests:
   Numeral: {}
   Parts of Speech: {}
   Past Tense Suffixes (འདས་པ་):
-    འཐེན་<v><iv><past><ewit>:
-    - འཐེན་ཅི་
+    བསགས་<v><tv><past><ewit>:
+    - བསགས་ཅི་
     འཁྱུ་<v><tv><past><einf>:
     - འཁྱུ་ནུག་
     འབད་<v><tv><past><einf>:

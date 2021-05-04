@@ -83,10 +83,12 @@ N-Stems(1) [ <n>: ] N-Stems(2): Cases?
 
 PATTERN Verbs
 Vbser-Stems(1) [ <vbser>: ] Vbser-Stems(2): Tenses?
-Vaux-Stems [ <vaux>: ] Tenses?
-:Neg Vaux-Stems [ <vaux>: ] Tenses? Neg:
+Vaux-Stems(1) [ <vaux>: ] Vaux-Stems(2): Tenses?
 V-Stems(1) [ <v>: ] V-Stems(2): Tenses?
-:Neg V-Stems(1) [ <v>: ] V-Stems(2): Tenses? Neg:
+:Neg V-Stems(1) [ <v>: ] V-Stems(2): Neg: Tenses?
+
+V-IStems(1) [ <v>: ] V-IStems(2): [ <infl>: ] ITenses?
+:Neg V-IStems(1) [ <v>: ] V-IStems(2): [ <infl>: ] Neg: ITenses?
 
 PATTERN Adjectives
 
@@ -108,11 +110,17 @@ LEXICON Cases
 
 LEXICON Tenses
 
-<past>:>{neg}{P}{A}{s}་
-<pres>:>ད{R}{n}་
-<fut>:>{F}{U}{t}་
-<imp>:>{I}{m}{p}་
+<past><ewit>:>{neg}{P}{T}་
+<past><einf>:>{neg}ནུག་
+<pres><prog>:>དོ་
+<inf>:>ནི་
+<imp>:>
+<imp><urg>:>ཤིག་
 <vadj>:>མི་
+
+LEXICON ITenses
+
+<pres><rec>:>མས་
 
 LEXICON Adj-Comp
 
@@ -124,7 +132,7 @@ LEXICON Adj-Sup
 
 LEXICON Neg
 
-<neg>:>མ{w}་
+<neg>:>མ{g}་
 
 ###############################################################################
 ###                          L E X I C O N                                  ###
@@ -156,6 +164,7 @@ LEXICON N-Stems(2)
 བྱི་ཙི་:བྱི་ཙི་  :
 གཡག་:འབྱི་  <f>
 བ་:གླང་  <f>
+དུས་ཚོད་:དུས་ཚོད་{loc}  :
 
 LEXICON V-Stems(2)
 
@@ -178,11 +187,26 @@ LEXICON V-Stems(2)
 མཐོང་:མཐོང་  <tv>
 ཤར་:ཤར་ <iv>
 འཐོབ་:འཐོབ་ <iv>
+དགའ་:དགའ་  <tv>
+མཐོང་:མཐོང་ <tv>
+འབད་:འབད་ <tv>
+ཧ་གོ་:ཧ་{n}{g}{w}གོ་ <tv>
 
-LEXICON Vaux-Stems
+LEXICON V-IStems(2)
 
-གེ་:གེ་
-བཅུག་:བཅུག་
+ཟ་:ཟཝ་  <tv>
+བལྟ་:བལྟཝ་  <tv>
+འབད་:འབདཝ་  <tv>
+དགའ་:དགའཝ་  <tv>
+
+LEXICON Vaux-Stems(2)
+
+གེ་:གེ་ <adh>
+གེ་:བཤོལ་གེ་ <neg><adh>
+བཅུག་:བཅུག་ <opt>
+བཅུག་:མ་བཅུག་ <neg><opt>
+འོང་:འོང་ <pot>
+འོང་:མ་འོང་ <neg><pot>
 
 LEXICON Vbser-Stems(2)
 

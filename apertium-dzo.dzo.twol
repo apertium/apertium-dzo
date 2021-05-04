@@ -14,29 +14,15 @@ Alphabet
 %{G%}:ག %{G%}:ཀ %{G%}:འ %{G%}:ཡ
 %{e%}:0 %{e%}:ྱ
 %{T%}:ི
-%{g%}:0 %{g%}:ག
-%{o%}:0 %{o%}:ི
-%{b%}:0 %{b%}:་
 
 %{L%}:ན %{L%}:ཁ
 %{O%}:ང %{O%}:ར
 
-%{P%}:ཅ %{P%}:ཡ %{P%}:ན
-%{A%}:ི %{A%}:ུ
-%{s%}:0 %{s%}:ག
+%{P%}:ཅ %{P%}:ཡ
 
-%{R%}:ོ %{R%}:ེ
-%{n%}:0 %{n%}:ས
-
-%{F%}:ན %{F%}:འ
-%{U%}:ི %{U%}:ོ
-%{t%}:0 %{t%}:ང
-
-%{I%}:ཤ %{I%}:ཞ %{I%}:ད
-%{m%}:0 %{m%}:ི
-%{p%}:0 %{p%}:ག
-
-%{w%}:0 %{w%}:ི
+%{n%}:0 %{n%}:མ
+%{g%}:0 %{g%}:ི
+%{w%}:0 %{w%}:་
 
 %{neg%}:0
 
@@ -56,13 +42,58 @@ Vowel = A E Ä I O Ö U Ü Y Ý
         ི ུ  ེ  ོ
         ྀ ྄  ཻ  ཽ ;
 
+PNM = པ ན མ ;
+GEN1 = ན མ ར ལ ;
+GEN2 = ད བ ས ;
+GEN3 = ག ང ;
+GEN5 = འ ;
+
 Rules
+
+"Witnessed past is ཅི་ when verb ends in པ་, ན་ or མ་"
+%{P%}:ཅ <=> :PNM :་ %>:0 :* _ ;
+
+"Genitive is གྱི་ when verb ends in ན མ ར ལ (1)"
+%{G%}:ག <=> :GEN1 :་ %>:0 :* _ ;
+
+"Genitive is གྱི་ when verb ends in ན མ ར ལ (2)"
+%{e%}:ྱ <=> :GEN1 :་ %>:0 :* _ ;
+
+"Genitive is ཀྱི་ when verb ends in ད བ ས (1)"
+%{G%}:ཀ <=> :GEN2 :་ %>:0 :* _ ;
+
+"Genitive is ཀྱི་ when verb ends in ད བ ས (2)"
+%{e%}:ྱ <=> :GEN2 :་ %>:0 :* _ ;
+
+"Genitive is གི་ when verb ends in ག ང (1)"
+%{G%}:ག <=> :GEN3 :་ %>:0 :* _ ;
+
+"Genitive is གི་ when verb ends in ག ང (2)"
+%{e%}:0 <=> :GEN3 :་ %>:0 :* _ ;
+
+"Genitive is ཡི་ when verb ends in འ (1)"
+%{G%}:ཡ <=> :GEN5 :་ %>:0 :* _ ;
+
+"Genitive is ཡི་ when verb ends in འ (2)"
+%{e%}:0 <=> :GEN5 :་ %>:0 :* _ ;
+
+"Genitive is གི་ when verb ends in vowel and unmarked (1)"
+%{G%}:ག <=> :Vowel :་ %>:0 :* _ ;
+
+"Genitive is གི་ when verb ends in vowel and unmarked (2)"
+%{e%}:0 <=> :Vowel :་ %>:0 :* _ ;
+
+"Genitive is འི་ when verb is marked (1)"
+%{G%}:འ <=> %{r%}: :* _ ;
+
+"Genitive is འི་ when verb is marked (2)"
+%{e%}:0 <=> %{r%}: :* _ ;
 
 "Remove syllable boundary when suffix is འི "
 %{r%}:0 <=> _ %>: :འ :0 :ི ;
 
-"Negative is མི only when verb is past tense"
-%{w%}:0 <=> _ :* %{neg%}: ;
+"Negative is མ only when verb is past tense"
+%{g%}:0 <=> _ :* %{neg%}: ;
 
 "Special Locative Suffix with some nominals(1)"
 %{L%}:ཁ <=> %{loc%}: :* _ ;
