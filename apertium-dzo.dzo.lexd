@@ -76,6 +76,9 @@ Nouns
 Verbs
 Adjectives
 Pronouns
+Numeral
+Determiner
+Adverb
 
 PATTERN Nouns
 
@@ -99,6 +102,18 @@ PATTERN Pronouns
 
 Prns Cases?
 
+PATTERN Numeral
+
+Nums Cases?
+
+PATTERN Determiner
+
+Det Cases?
+
+PATTERN Adverb
+
+Adv Cases?
+
 LEXICON Cases
 
 <gen>:>{G}{e}{T}་
@@ -114,7 +129,7 @@ LEXICON Tenses
 <past><einf>:>{neg}ནུག་
 <pres><prog>:>དོ་
 <inf>:>ནི་
-<imp>:>
+<imp>:>ད་
 <imp><urg>:>ཤིག་
 <vadj>:>མི་
 
@@ -158,10 +173,18 @@ LEXICON N-Stems(2)
 སྒྲོམ་:སྒྲོམ་  :
 དགེ་སློང་:དགེ་སློང་  :
 སྲིངམོ་:སྲིངམོ་  :
+དུས་ཚོད་:དུས་ཚོད་ :
+མཐུ་:མཐུ་  :
 ཉིམ་:ཉིམ་  :
 སྲུང་:སྲུང་  :
 ནོར་བུ་:ནོར་བུ་  :
 བྱི་ཙི་:བྱི་ཙི་  :
+གསེར་:གསེར་  :
+སྨན་:སྨན་  :
+ཕྱག་:ཕྱག་  :
+རྒྱུ་ནོར་:རྒྱུ་ནོར་  :
+ཐགཔ་:ཐགཔ་  :
+ཞབས་ཁྲ་:ཞབས་ཁྲ་  :
 གཡག་:འབྱི་  <f>
 བ་:གླང་  <f>
 དུས་ཚོད་:དུས་ཚོད་{loc}  :
@@ -187,6 +210,12 @@ LEXICON V-Stems(2)
 མཐོང་:མཐོང་  <tv>
 ཤར་:ཤར་ <iv>
 འཐོབ་:འཐོབ་ <iv>
+ལྷོད་:ལྷོད་ <iv>
+བཙོངམ་:བཙོངམ་ <tv>
+ཐོབ་:ཐོབ་ <tv>
+གནང་:གནང་ <tv>
+འཐེན་:འཐེན་  <iv>
+རྐྱབ་:རྐྱབ་ <iv>
 དགའ་:དགའ་  <tv>
 མཐོང་:མཐོང་ <tv>
 འབད་:འབད་ <tv>
@@ -237,6 +266,20 @@ LEXICON Prns
 ཁོང་<prn><p3><pl>:ཁོང་
 ནཱ་<prn><ph><sg>:ནཱ་
 ནཱ་བུ་<prn><ph><pl>:ནཱ་བུ་
+
+LEXICON Nums
+
+གཅིག་<num>:གཅིག་
+གཉིས་<num>:གཉིས་
+
+LEXICON Det
+
+དེ་<det>:དེ་
+
+LEXICON Adv
+
+ད་<adv>:ད་
+
 
 LEXICON Punctuation
 
