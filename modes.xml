@@ -21,7 +21,7 @@
     </pipeline>
   </mode>
 
-  <mode name="dzo-old_morph" install="yes">
+  <mode name="dzo_old-morph" install="yes">
     <pipeline>
       <program name="python3">
         <file name="tokenize.py"/>
