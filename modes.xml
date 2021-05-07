@@ -49,7 +49,7 @@
     </pipeline>
   </mode>
 
-  <mode name="dzo-tagger" install="yes">
+  <mode name="dzo_old-tagger" install="yes">
     <pipeline>
       <program name="python3">
         <file name="tokenize.py"/>
@@ -64,7 +64,7 @@
     </pipeline>
   </mode>
 
-  <mode name="dzo-disam" install="yes">
+  <mode name="dzo_old-disam" install="yes">
     <pipeline>
       <program name="python3">
         <file name="tokenize.py"/>
@@ -72,6 +72,33 @@
       </program>
       <program name="lt-proc -w">
         <file name="dzo.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="dzo.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+    <mode name="dzo-tagger" install="yes">
+    <pipeline>
+      <program name="python3">
+        <file name="tokenize.py"/>
+        <file name="dzo.autotok.hfst"/>
+        <file name="dzo.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="dzo.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="dzo-disam" install="yes">
+    <pipeline>
+      <program name="python3">
+        <file name="tokenize.py"/>
+        <file name="dzo.autotok.hfst"/>
+        <file name="dzo.automorf.hfst"/>
       </program>
       <program name="cg-conv -a"/>
       <program name="vislcg3 --trace --grammar">
