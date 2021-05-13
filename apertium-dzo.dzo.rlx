@@ -1,24 +1,24 @@
 # Firstly, we need to define what tags should be considered sentence delimiters. For this example, only full stop is set as delimiter.
-DELIMITERS = "<.>" ;
+DELIMITERS = "<།>" ;
 
 # We can define sets for common tag clusters
 LIST Case = (n s) (n p) ; # A set that matches either a Noun Singular or a Noun Plural
+LIST ALL = (n) (v) (vbser) (vaux) (adj) (adv) (prn) (num) (det) (cnjsub) ; # A set for anything
 
 SECTION
 
-# If there is a noun after AND verb before the ambiguous word, remove the adverb reading
-REMOVE (adv) IF
-             (0 (adv))
-             (0 (cnjsub))
-             (1 (n) )
-             (-1 (v)) ;
-
-# If there is a noun after the ambiguous word, select the adv reading
+# If there is nothing before the word, select the adv reading
 SELECT (adv) IF
-             (0 (adv))
-             (0 (cnjsub))
-             (1 (n) ) ;
+             (NOT -1 ALL) ;
 
+# If there is nothing after the word, select the imp reading
+SELECT (imp) IF
+             (NOT 1 ALL) ;
+
+# If there is something before the word and after the word, select the cnjsub reading
+SELECT (cnjsub) IF
+             (1 ALL)
+             (-1 ALL) ;
 
 # Resources:
 # http://visl.sdu.dk/cg3.html
