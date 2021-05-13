@@ -3,36 +3,33 @@ DELIMITERS = "<།>" ;
 
 # We can define sets for common tag clusters
 LIST Case = (n s) (n p) ; # A set that matches either a Noun Singular or a Noun Plural
-LIST ALL = (n) (v) (vbser) (vaux) (adj) (adv) (prn) (num) (det) (cnjsub) ; # A set for anything
+LIST ALL = (n) (v) (vbser) (vaux) (adj) (adv) (prn) (num) (det) (cnjsub) ; # A list for everything
+LIST V = v ;
 
 SECTION
 
-# If there is nothing before the word, select the adv reading
-SELECT (adv) IF
-             (NOT 1 ALL) ;
+# Bandaid solutions due to tokenizing issue
 
-# If there is something before the word, remove the adv reading
+# Remove adv if there is a verb right before it (for some reason this is in cohort 0)
 REMOVE (adv) IF
-             (1 ALL) ;
+             (0 V)  ;
 
-# If there is nothing after the word, select the imp reading
-SELECT (imp) IF
-             (NOT -1 ALL) ;
+# Regular solutions
+
+#  If there is something before the word, remove the adv reading
+REMOVE (adv) IF
+             (-1 ALL) ;
 
 # If there is something before the word, remove the imp reading
 REMOVE (imp) IF
-             (-1 ALL) ;
-
-# If there is something before the word and after the word, select the cnjsub reading
-SELECT (cnjsub) IF
-             (1 ALL)
-             (-1 ALL) ;
+             (1 ALL) ;
 
 # If there is nothing before the word or after the word, remove the cnjsub reading
 REMOVE (cnjsub) IF
              (NOT 1 ALL)  ;
 REMOVE (cnjsub) IF
              (NOT -1 ALL) ;
+
 
 # Resources:
 # http://visl.sdu.dk/cg3.html
