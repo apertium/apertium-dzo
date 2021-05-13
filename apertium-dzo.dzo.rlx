@@ -20,7 +20,7 @@ REMOVE (adv) IF
 REMOVE (adv) IF
              (-1 ALL) ;
 
-# If there is something before the word, remove the imp reading
+# If there is something after the word, remove the imp reading
 REMOVE (imp) IF
              (1 ALL) ;
 
