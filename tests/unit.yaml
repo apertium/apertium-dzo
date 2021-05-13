@@ -4,6 +4,8 @@ Config:
     Gen: ../dzo.autogen.hfst
     Morph: ../dzo.automorf.hfst
 Tests:
-  Dative Suffix:
-     ང་<prn><p1><sg><gen>:
-     - ངའི་གི་
+  Ambi:
+     ད་<cnjsub>:
+     - ད་
+     ད་<adv>:
+     - ད་

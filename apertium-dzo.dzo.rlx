@@ -9,11 +9,11 @@ SECTION
 
 # If there is nothing before the word, select the adv reading
 SELECT (adv) IF
-             (NOT -1 ALL) ;
+             (NOT 1 ALL) ;
 
 # If there is nothing after the word, select the imp reading
 SELECT (imp) IF
-             (NOT 1 ALL) ;
+             (NOT -1 ALL) ;
 
 # If there is something before the word and after the word, select the cnjsub reading
 SELECT (cnjsub) IF
