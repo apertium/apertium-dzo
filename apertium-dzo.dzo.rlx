@@ -30,7 +30,8 @@ SELECT (cnjsub) IF
 
 # If there is nothing before the word or after the word, remove the cnjsub reading
 REMOVE (cnjsub) IF
-             (NOT 1 ALL) OR
+             (NOT 1 ALL)  ;
+REMOVE (cnjsub) IF
              (NOT -1 ALL) ;
 
 # Resources:
