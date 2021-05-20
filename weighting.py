@@ -196,6 +196,7 @@ def init_sampling(tokenizer, sin):
     add_count(words, occurences)
     for i in range(1, total_iters):
         new_sampling(corpus, words, occurences)
+    return occurences
 
 
 if __name__ == '__main__':
@@ -206,5 +207,5 @@ if __name__ == '__main__':
     stream_tok = hfst.HfstInputStream(args.transducer)
     tokenizer = hfst.HfstBasicTransducer(stream_tok.read())
     with open('blah.txt') as sin:
-        init_sampling(tokenizer, sin)
-    print(occurences)
+        out = init_sampling(tokenizer, sin)
+    print(out)
