@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <modes>
 
-  <mode name="dzo-twol" install="yes">
+  <mode name="dzo-twol" install="no">
     <pipeline>
       <program name="hfst-strings2fst -S"/>
       <program name="hfst-compose-intersect">
@@ -13,7 +13,7 @@
 
   <mode name="dzo-morph" install="yes">
     <pipeline>
-      <program name="python3">
+      <program name="python3" debug-suff="morph">
         <file name="tokenize.py"/>
         <file name="dzo.autotok.hfst"/>
         <file name="dzo.automorf.hfst"/>
@@ -21,9 +21,9 @@
     </pipeline>
   </mode>
 
-  <mode name="dzo_old-morph" install="yes">
+  <mode name="dzo_old-morph" install="no">
     <pipeline>
-      <program name="python3">
+      <program name="python3" debug-suff="tok">
         <file name="tokenize.py"/>
         <file name="dzo.autotok.hfst"/>
       </program>
@@ -33,7 +33,7 @@
     </pipeline>
   </mode>
   
-  <mode name="dzo-lexc" install="yes">
+  <mode name="dzo-lexc" install="no">
     <pipeline>
       <program name="hfst-lookup">
         <file name=".deps/dzo.LR.lexc.hfst"/>
@@ -49,9 +49,9 @@
     </pipeline>
   </mode>
 
-  <mode name="dzo_old-tagger" install="yes">
+  <mode name="dzo_old-tagger" install="no">
     <pipeline>
-      <program name="python3">
+      <program name="python3" debug-suff="tok">
         <file name="tokenize.py"/>
         <file name="dzo.autotok.hfst"/>
       </program>
@@ -64,9 +64,9 @@
     </pipeline>
   </mode>
 
-  <mode name="dzo_old-disam" install="yes">
+  <mode name="dzo_old-disam" install="no">
     <pipeline>
-      <program name="python3">
+      <program name="python3" debug-suff="tok">
         <file name="tokenize.py"/>
         <file name="dzo.autotok.hfst"/>
       </program>
@@ -82,7 +82,7 @@
 
     <mode name="dzo-tagger" install="yes">
     <pipeline>
-      <program name="python3">
+      <program name="python3" debug-suff="morph">
         <file name="tokenize.py"/>
         <file name="dzo.autotok.hfst"/>
         <file name="dzo.automorf.hfst"/>
@@ -95,7 +95,7 @@
 
   <mode name="dzo-disam" install="yes">
     <pipeline>
-      <program name="python3">
+      <program name="python3" debug-suff="morph">
         <file name="tokenize.py"/>
         <file name="dzo.autotok.hfst"/>
         <file name="dzo.automorf.hfst"/>

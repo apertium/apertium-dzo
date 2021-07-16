@@ -1,0 +1,83 @@
+# "To be" Verb
+^འདུག་<vbser><neg>$
+^ཡོད་<vbser><neg>$
+^ཨིན་<vbser><neg>$
+# Ablative Suffix
+^ཁ་རྩ་<n><abl>$
+^ང་<prn><p1><sg><abl>$
+^རྒྱ་མཚོ་<n><abl>$
+^ཧིང་<n><abl>$
+# Auxiliary Verb Suffix {{tag|Under-Rework}}
+^གཅད་<v><tv><fut>$
+^གེ་<vaux><adh>$
+^གེ་<vaux><neg><adh>$
+^དགའ་<v><tv>$
+^དགའ་<v><tv><infl>$
+^བཅུག་<vaux><neg><opt>$
+^བཅུག་<vaux><opt>$
+^བཟོ་<v><tv>$
+^ཟ་<v><tv>$
+^ཟུང་<v><tv>$
+^འབད་<v><tv><infl>$
+^འོང་<vaux><neg><pot>$
+^འོང་<vaux><pot>$
+^སྤུང་<v><tv>$
+# Comparative and Superlative
+^འཇའ་<adj><comp>$
+^འཇའ་<adj><sup>$
+^རྒས་<adj><comp>$
+^རྒས་<adj><sup>$
+# Dative Suffix
+^ང་<prn><p1><sg><dat>$
+^ཆ་རོགས་<n><dat>$
+^ཐིམ་ཕུག་<n><dat>$
+^ཡིག་ཚང་<n><loc><dat>$
+# Future Tense Suffixes (མ་འོངས་པ་)
+^བལྟ་<v><iv><inf>$
+^འཁྱུ་<v><tv><inf>$
+# Gendered Noun (རྟགས་མིང་)
+^གཡག་<n><f>$
+^བ་<n><f>$
+# Genitive Suffixes
+^ཁོ་<prn><p3><sg><m><gen>$
+^ཁོང་<prn><p3><pl><gen>$
+^ཁྱིམ་<n><gen>$
+^ང་<prn><p1><sg><gen>$
+^ང་བཅས་<prn><p1><pl><gen>$
+^མདའ་<n><gen>$
+^ཨམ་ཚུ་<n><gen>$
+# Honorific Noun (ཞེ་སའི་མིང་)
+^མགུ་ཏོ་<n>$
+^ལུས་<n>$
+# Imperative Suffixes (སྐུལ་ཚིག་)
+^བྲིས་<v><tv><imp><urg>$
+^ཟ་<v><tv><imp>$
+^འབད་<v><tv><imp>$
+^སྟོན་<v><tv><imp><urg>$
+# Locative Suffixes
+^ཁྱིམ་<n><loc>$
+^ཁྲོམ་<n><loc>$
+^གཡུས་<n><loc>$
+^ཡིག་ཚང་<n><loc>$
+# Negative (དགག་སྒྲ་)
+^མཐོང་<v><tv><neg><past><einf>$
+^འབད་<v><tv><neg><pres><prog>$
+^ཧ་གོ་<v><tv><neg><imp>$
+# Past Tense Suffixes (འདས་པ་)
+^བསགས་<v><tv><past><ewit>$
+^འཁྱུ་<v><tv><past><einf>$
+^འབད་<v><tv><past><einf>$
+^སྦྱངས་<v><tv><past><ewit>$
+# Present Tense Suffixes (ད་ལྟ་བ་)
+^བལྟ་<v><tv><infl><pres><rec>$
+^ཟ་<v><tv><infl><pres><rec>$
+^འཁྱུ་<v><tv><pres><prog>$
+^རྐོ་<v><tv><pres><prog>$
+# Quantitative Adjectives (གྲངས་ཀྱི་ཁྱད་ཚིག།)
+^ཕམ་<n><adj><qnt>$
+^བྱི་ལི་<n><adj><qnt>$
+# Verbal Adjective
+^གཏང་<v><iv><vadj>$
+^འཁྱུ་<v><tv><vadj>$
+^འཐེན་<v><iv><vadj>$
+^འབྲི་<v><tv><vadj>$

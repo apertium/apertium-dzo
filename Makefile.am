@@ -20,8 +20,6 @@ TARGETS_COMMON =			\
 # This include defines goals for install-modes, .deps/.d, autobil.prefixes and .mode files:
 @ap_include@
 
-LEXCFLAGS=-v --Werror
-
 ###############################################################################
 ## Dzongkha transducer
 ###############################################################################
@@ -149,6 +147,7 @@ EXTRA_DIST= \
 		$(BASENAME).$(LANG1).rlx	\
 		$(BASENAME).post-$(LANG1).dix	\
 		$(LANG1).prob			\
+		tokenize.py \
 		modes.xml
 
 ###############################################################################
@@ -167,7 +166,12 @@ if HAVE_HFSTOSPELL
 EXTRA_TARGETS += $(LANG1).zhfst
 endif # HAVE_HFSTOSPELL
 
-apertium_dzo_DATA=$(TARGETS_COMMON) $(EXTRA_TARGETS)
+apertium_dzo_DATA=$(TARGETS_COMMON) $(EXTRA_TARGETS) \
+				  $(BASENAME).$(LANG1).lexd \
+				  $(BASENAME).$(LANG1).twol \
+				  $(BASENAME).$(LANG1).rlx \
+				  $(BASENAME).post-$(LANG1).dix \
+				  tokenize.py
 
 pkgconfigdir = $(prefix)/share/pkgconfig
 pkgconfig_DATA = $(BASENAME).pc
@@ -175,10 +179,7 @@ pkgconfig_DATA = $(BASENAME).pc
 noinst_DATA=modes/$(LANG1)-morph.mode
 
 install-data-local: install-modes
-	$(INSTALL_DATA) $(BASENAME).$(LANG1).lexc $(DESTDIR)$(apertium_dzo_srcdir)
-	$(INSTALL_DATA) $(BASENAME).$(LANG1).twol $(DESTDIR)$(apertium_dzo_srcdir)
-	$(INSTALL_DATA) $(BASENAME).$(LANG1).rlx $(DESTDIR)$(apertium_dzo_srcdir)
-	$(INSTALL_DATA) $(BASENAME).post-$(LANG1).dix $(DESTDIR)$(apertium_dzo_srcdir)
+uninstall-local: uninstall-modes
 
 ###############################################################################
 ## Cleanup
@@ -193,7 +194,4 @@ clean-local:
 ###############################################################################
 
 test: all
-	echo "TODO test sentence" | apertium -d . -f line dzo-morph | tee .test-mt
-	@echo "TODO test analysis results" > .test-ref
-	@diff .test-ref .test-mt
-	@rm .test-ref .test-mt
+	apertium-regtest test

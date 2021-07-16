@@ -1,0 +1,30 @@
+{
+  "dzo": {
+    "input": "dzo-input.txt",
+    "mode": "dzo-morph"
+  },
+  "dzo-gen": {
+    "input": "dzo-gen-input.txt",
+    "mode": "dzo-gener"
+  },
+  "dzon": {
+    "input": "dzon-input.txt",
+    "mode": "dzo-morph"
+  },
+  "dzon-gen": {
+    "input": "dzon-gen-input.txt",
+    "mode": "dzo-gener"
+  },
+  "unit": {
+    "input": "unit-input.txt",
+    "mode": "dzo-morph"
+  },
+  "unit-gen": {
+    "input": "unit-gen-input.txt",
+    "mode": "dzo-gener"
+  },
+  "twol": {
+    "input": null,
+    "command": "test/run-twol-pairtests.sh"
+  }
+}
