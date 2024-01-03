@@ -80,6 +80,16 @@
     </pipeline>
   </mode>
 
+	<mode name="dzo-tokenise" install="yes">
+		<pipeline>
+			<program name="python3" debug-suff="morph">
+				<file name="tokenize.py"/>
+				<file name="dzo.autotok.hfst"/>
+				<file name="dzo.automorf.hfst"/>
+			</program>
+		</pipeline>
+	</mode>
+
     <mode name="dzo-tagger" install="yes">
     <pipeline>
       <program name="python3" debug-suff="morph">
