@@ -90,6 +90,22 @@
 		</pipeline>
 	</mode>
 
+	<mode name="dzo-spell" install="yes">
+		<pipeline>
+			<program name="python3" debug-suff="morph">
+				<file name="tokenize.py"/>
+				<file name="dzo.autotok.hfst"/>
+				<file name="dzo.automorf.hfst"/>
+			</program>
+			<program name="sed -r 's/\$( )?\^/\n/g'"/>
+			<program name="sed 's/[\^\$]//g'"/>
+			<program name="sed 's:/.*::'"/>
+			<program name="hfst-ospell -S">
+				<file name="dzo.zhfst"/>
+			</program>
+		</pipeline>
+	</mode>
+
     <mode name="dzo-tagger" install="yes">
     <pipeline>
       <program name="python3" debug-suff="morph">
