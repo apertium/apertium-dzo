@@ -3,6 +3,7 @@
 # Part of speech categories
 # <n>      # Noun
 # <prn>    # Pronoun
+# <pr>     # Preposition
 # <v>      # Standard verb
 # <vaux>   # Auxiliary verb
 # <vbser>  # 'To-be' verb
@@ -66,6 +67,7 @@
 
 # Other symbols
 # >      # Morpheme boundary
+# <itg>  # Interrogative
 
 ###############################################################################
 ###                       M O R P H O T A C T I C S                         ###
@@ -82,45 +84,39 @@ Adverb
 Conjunction
 
 PATTERN Nouns
-
-N-Stems(1) [ <n>: ] N-Stems(2): Cases?
+N-Stems(1) [ <n>: ] N-Stems(2): Adjectives? Cases? Preposition?
 
 PATTERN Verbs
 Vbser-Stems(1) [ <vbser>: ] Vbser-Stems(2): Tenses?
 Vaux-Stems(1) [ <vaux>: ] Vaux-Stems(2): Tenses?
 V-Stems(1) [ <v>: ] V-Stems(2): Tenses?
 :Neg V-Stems(1) [ <v>: ] V-Stems(2): Neg: Tenses?
-
 V-IStems(1) [ <v>: ] V-IStems(2): [ <infl>: ] ITenses?
 :Neg V-IStems(1) [ <v>: ] V-IStems(2): [ <infl>: ] Neg: ITenses?
 
 PATTERN Adjectives
-
 Adj-Stems [ <adj>: ] Adj-Sup?
 :Adj-Comp Adj-Stems [ <adj>: ] Adj-Comp:
 
 PATTERN Pronouns
-
 Prns Cases?
 
-PATTERN Numeral
+PATTERN Preposition
+Prep [ <pr>: ] 
 
+PATTERN Numeral
 Nums [ <num>: ] Cases?
 
 PATTERN Determiner
-
-Det [ <det>: ] Cases?
+Det Cases?
 
 PATTERN Adverb
-
 Adv [ <adv>: ] Cases?
 
 PATTERN Conjunction
-
 Conj [ <cnjsub>: ] Cases?
 
 LEXICON Cases
-
 <gen>:>{G}{e}{T}་
 <loc>:>{L}{O}་
 <abl>:>ལས་
@@ -129,11 +125,12 @@ LEXICON Cases
 <adj><qnt>:>{Q}{N}{v}{d}{j}་
 
 LEXICON Tenses
-
 <past><ewit>:>{neg}{P}{T}་
 <past><einf>:>{neg}ནུག་
 <pres><prog>:>དོ་
-<inf>:>ནི་
+<pres><prog>:>དེ་
+<fut>:>ནི་
+<inf>:>བར་
 <imp>:>ད་
 <imp><urg>:>ཤིག་
 <vadj>:>མི་
@@ -235,6 +232,14 @@ LEXICON N-Stems(2)
 ཤིང༌:ཤིང༌ :
 འབུཔ་:འབུཔ་ :
 
+མཇུག་མ་:མཇུག་མ་ : 
+ཕྱེམ་ལ་:ཕྱེམ་ལ་ :
+
+# names
+ཉི་མ་:ཉི་མ་ :
+ཟླ་བ་:ཟླ་བ་ :
+
+
 LEXICON V-Stems(2)
 
 བསགས་:བསགས་  <tv>
@@ -254,7 +259,6 @@ LEXICON V-Stems(2)
 སྤུང་:སྤུང་  <tv>
 ཟུང་:ཟུང་  <tv>
 མཐོང་:མཐོང་  <tv>
-ཤར་:ཤར་ <iv>
 འཐོབ་:འཐོབ་ <iv>
 ལྷོད་:ལྷོད་ <iv>
 བཙོངམ་:བཙོངམ་ <tv>
@@ -270,10 +274,8 @@ LEXICON V-Stems(2)
 འགོ་བཙུགས་:འགོ་བཙུགས་ <tv>
 འགྱུར་:འགྱུར་ <iv>
 འབོ་:འབོ་ <tv>
-ཚོར་:ཚོར་ <iv>
 བྱིན་:བྱིན་ <tv>
 གོ་:གོ་ <tv>
-ཤེས་:ཤེས་ <tv>
 དགའ་:དགའ་ <tv>
 བལྟ་:བལྟ་ <tv>
 རྩེ་:རྩེ་ <tv>
@@ -296,6 +298,20 @@ LEXICON V-Stems(2)
 རྟེན་འབྲེལ་བརྩི་:རྟེན་འབྲེལ་བརྩི་ <iv>
 འཐུང་:འཐུང་ <tv>
 ཕང་མར་བཏབ་:ཕང་མར་བཏབ་ <tv>
+
+འགྱོ་:འགྱོ་ <tv>
+
+ཆགས་:ཆགས་ <iv>
+
+ཚོར་:ཚོར་ <iv>
+འཚོལ་:འཚོལ་ <tv>
+
+ཤར་:ཤར་ <iv>
+ཤི་:ཤི་ <iv>
+ཤེས་:ཤེས་ <tv>
+བཤལ་:བཤལ་ <iv>
+བཤེད་:བཤེད་ <iv>
+
 
 LEXICON V-IStems(2)
 
@@ -324,6 +340,8 @@ LEXICON Vbser-Stems(2)
 སྨོ་:སྨོ་  :
 
 LEXICON Adj-Stems
+
+དཀརཔོ་:དཀརཔོ་
 
 འཇའ་:འཇའ་
 རྒས་:རྒས་
@@ -380,11 +398,18 @@ LEXICON Nums
 
 LEXICON Det
 
-དེ་:དེ་
+དེ་<det>:དེ་
+ག་ཅི་<det><itg>:ག་ཅི་
 
 LEXICON Adv
 
 ད་:ད་
+
+LEXICON Prep
+
+ནང་:ནང་
+ཁར་:ཁར་
+གུ་:གུ་
 
 LEXICON Conj
 
